@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show edit update]
+  before_action :set_article, only: %i[show edit update destroy]
   before_action :new_article, only: %i[new create]
   around_action :save_article, only: %i[create update]
 
@@ -9,7 +9,13 @@ class ArticlesController < ApplicationController
   end
 
   def create; end
+
   def update; end
+
+  def destroy
+    @article.destroy
+    redirect_to articles_path
+  end
 
   private
 
