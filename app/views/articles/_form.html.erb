@@ -1,5 +1,7 @@
 <%= render 'display_errors' %>
 
+<div class="container">
+
 <%= form_with model: @article, local: true do |f| %>
   <p>
     <%= f.label :title %><br/>
@@ -13,3 +15,4 @@
     <%= f.submit %>
   </p>
 <% end %>
+</div>

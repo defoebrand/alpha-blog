@@ -1,4 +1,11 @@
-<h1>This is the Homepage</h1>
-
-<%= link_to 'Articles Listing', articles_path %> |
-<%= link_to 'About Page', about_path %>
+  <div class="text-center" id="home_container">
+    <div class="p-5 mb-4 bg-secondary rounded-3 text-center jumbotron">
+      <div class="container-fluid py-5 jumbotext">
+        <h1 class="display-5 fw-bold">Alpha Blog</h1>
+        <p class="fs-4">The Premier Blogging App from Udemy's Rails Crash course.</p>
+        <button class="btn btn-success btn-lg" type="button">
+          <a class="nav-link" href="/articles/new">Write an Article</a>
+        </button>
+      </div>
+    </div>
+  </div>

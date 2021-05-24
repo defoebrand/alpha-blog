@@ -1,5 +1,47 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 .navbar {
-  background-color: #FDF6EA !important;
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.navbar-toggler {
+  background-color: white !important;
+}
+
+#logo {
+  color: white !important;
+  float: left;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home_container {
+  margin-top: 25px;
+}
+
+.jumbotron {
+  background-image: asset-url('writing-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 475px;
+}
+
+.jumbotext {
+  color: white;
+  text-shadow: 3px 3px 7.5px black, -3px -3px 7.5px black, 3px -3px 7.5px black, -3px 3px 7.5px black;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: 0;
 }
