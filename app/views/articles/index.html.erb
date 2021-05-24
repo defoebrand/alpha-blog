@@ -1,27 +1,31 @@
-<h1>Articles Listing Page</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Description</th>
-        <th colspan='3'>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-        <tr>
-          <td><%= article.title %></td>
-          <td><%= article.description%></td>
-          <td><%= link_to 'Show', article_path(article) %></td>
-          <td><%= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
- <p>
-   <%= link_to 'New Article', new_article_path %> |
-   <%= link_to 'Home Page', root_path %> |
-   <%= link_to 'About Page', about_path %>
- </p>
+<div class="container mt-4">
+  <header class="text-center">
+    <h1>Articles Listing Page</h1>
+    <%= link_to 'New Article', new_article_path, class: 'btn btn-success' %>
+  </header>
+  <% @articles.each do |article| %>
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="card my-4 shadow bg-white rounded">
+          <div class="card-header fst-italic">
+            Author
+          </div>
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold">
+            <%= link_to article.title, article_path(article), class: 'text-success' %>
+          </h5>
+          <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+          <%= link_to 'View', article_path(article), class: 'btn btn-outline-primary' %>
+          <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-info' %>
+          <%= link_to 'Delete', article_path(article), class: 'btn btn-outline-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+          <div class="card-footer text-muted">
+            <small>
+              Created <%= time_ago_in_words(article.created_at) %> ago, edited <%= time_ago_in_words(article.updated_at) %> ago
+            </small>
+          </div>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>

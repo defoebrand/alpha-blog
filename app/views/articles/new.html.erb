@@ -1,7 +1,6 @@
-<h1>Create a new article</h1>
-
-<%= render 'form' %>
-
-<button class="btn btn-success btn-lg" type="button">
-  <%= link_to 'All Articles', articles_path, class: 'nav-link' %>
-</button>
+<div class="container mt-4">
+  <header class="text-center">
+    <h1>Create a new article</h1>
+  </header>
+  <%= render 'form', form_action: 'Create A New' %>
+</div>

@@ -1,6 +1,6 @@
-<h1>Edit article</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'All Articles', articles_path %>
-<%= link_to 'Back', article_path(@article) %>
+<div class="container mt-4">
+  <header class="text-center">
+    <h1>Edit article</h1>
+  </header>
+  <%= render 'form', form_action: 'Edit' %>
+</div>
