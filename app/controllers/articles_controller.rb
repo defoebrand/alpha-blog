@@ -32,6 +32,7 @@ class ArticlesController < ApplicationController
   end
 
   def save_article
+    @article.user = User.first
     flash_notice = params[:action] == 'create' ? 'created' : 'updated'
     return_to_page = params[:action] == 'create' ? 'new' : 'edit'
 
