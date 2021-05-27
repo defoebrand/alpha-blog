@@ -7,7 +7,8 @@
         <div class="col-8">
           <div class="card my-4 shadow bg-white rounded">
             <div class="card-header fst-italic">
-              by: <%= @article.user.username %>
+              by: <%= link_to @article.user.username, user_path(@article.user) if @article.user %>
+              <%= link_to avatar_img(80), user_path(@article.user) if @article.user %>
             </div>
             <div class="card-body">
               <div class="card-text text-start"><%= simple_format(@article.description) %></div>
