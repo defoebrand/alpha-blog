@@ -3,7 +3,7 @@
 <%= avatar_img(200) %>
 
 <div class="text-center my-4">
-  <% if logged_in? && current_user == @user %>
+  <% if logged_in? && (current_user == @user || current_user.admin? ) %>
     <%= link_to "New Article", new_article_path, class: 'btn btn-outline-success' %>
     <%= link_to "Edit your profile", edit_user_path(@user), class: 'btn btn-outline-info' %>
   <% end %>
