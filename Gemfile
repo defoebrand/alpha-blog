@@ -50,5 +50,20 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  # The basics
+  gem 'minitest'
+  gem 'minitest-rails'
+
+  # For better display
+  gem 'minitest-reporters'
+
+  # For managing testing data
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
