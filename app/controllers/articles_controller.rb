@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[show edit update destroy]
   before_action :new_article, only: %i[new create]
+  before_action :set_article, only: %i[show edit update destroy]
   around_action :save_article, only: %i[create update]
-  before_action :require_user, except: %i[show index]
+  before_action :require_user, except: %i[index show]
   before_action :require_same_user, only: %i[edit update destroy]
 
 
